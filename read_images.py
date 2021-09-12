@@ -44,6 +44,9 @@ def ocr_image(image):
 
 if __name__ == '__main__':
     sys.stdout.write("A simple OCR utility\n")
+    for p in ['input', 'output']:
+        if not os.path.isdir(p):
+            os.mkdir(p)
     files = os.listdir('input')
     for file in files:
         input_file = 'input/%s' % file
